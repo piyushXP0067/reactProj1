@@ -6,10 +6,10 @@ import { Link, Stack } from 'expo-router';
 const DayDetailsScreen = () => {
   return (
     <View>
-        <Stack.Screen options={{title: 'day2'}} />
+        <Stack.Screen options={{title: 'day3: Markdown'}} />
       <Text>Day Details Screen</Text>
-      <Link href={'/day2/onBoardingScreen'} asChild>
-      <Button title='Go to onboarding'/>
+      <Link href={'/day3/editor'} asChild>
+      <Button title='Go to Markdown'/>
       </Link>
     </View>
   );

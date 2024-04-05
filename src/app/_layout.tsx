@@ -4,7 +4,7 @@ import * as SplashScreen from 'expo-splash-screen';
 SplashScreen.preventAutoHideAsync();
 import { useEffect } from 'react';
 import {AmaticSC_400Regular,AmaticSC_700Bold}from '@expo-google-fonts/amatic-sc';
-
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 export default function rootlayout(){
     const [fontsLoaded, fontError] = useFonts(
@@ -15,7 +15,7 @@ export default function rootlayout(){
         }
       );
     
-    useEffect(() => {
+    useEffect(() => { 
       if (fontsLoaded || fontError){
          SplashScreen.hideAsync();
       }
@@ -25,12 +25,15 @@ export default function rootlayout(){
       return null;
     }
     
-    
-    return (
-        <Stack screenOptions={{}}>
-          <Stack.Screen name="index" options={{ title: 'DEVember' }} />
-        </Stack>
-      );
+
+  return (
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <Stack screenOptions={{}}>
+        <Stack.Screen name="index" options={{ title: 'DEVember' }} />
+      </Stack>
+    </GestureHandlerRootView>
+
+  );
 }
 
 
